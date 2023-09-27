@@ -27,4 +27,4 @@ steps:
     testRunTitle: 'publish test results'
 - task: PublishAllureReport@1
   inputs:
-    reportDir: '$(AllureReportDirectory)/cypress/reports/'
+    reportDir: '**/index.html'
