@@ -4,7 +4,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 stages:
-- stage: Certificacion
+- stage: FuncionalTesting
   jobs:
   - job: FuncionalTest
     steps:
@@ -28,8 +28,9 @@ stages:
         testResultsFiles: '**/output.xml'
         mergeTestResults: true
         testRunTitle: 'publish test results'
-
-  - job: ApiTest
+- stage: API
+  jobs:
+  - job: ApiTesting
     steps:
     - script: |
         npm install -g newman
