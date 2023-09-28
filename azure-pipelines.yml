@@ -38,11 +38,11 @@ stages:
 
     - script: |
         newman run Booking.postman_collection.json -v Booking.postman_environment reportes cli.junit --reporter-junit-export junit-report.xml
-      workingDirectory: '$(System.DefaultWorkingDirectory)/api-test/'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/api-testing/'
       displayName: 'Run Postman'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: $(System.DefaultWorkingDirectory)/api-test/report/junit-report.xml'
+        testResultsFiles: $(System.DefaultWorkingDirectory)/api-testing/report/junit-report.xml'
         mergeTestResults: true
         testRunTitle: 'publish test results'
