@@ -25,9 +25,10 @@ steps:
     testResultsFiles: '**/output.xml'
     mergeTestResults: true
     testRunTitle: 'publish test results'
-- task: PublishAllureReport@1
+- task: publishhtmlreport@1
   inputs:
-    reportDir: '$(System.DefaultWorkingDirectory)/cypress/reports'
+    htmlType: 'genericHTML'
+    htmlPath: '$(Build.SourcesDirectory)/cypress/reports/index.html'
 - task: CmdLine@2
   inputs:
     script: 'ls'
