@@ -28,3 +28,7 @@ steps:
 - task: PublishAllureReport@1
   inputs:
     reportDir: '$(System.DefaultWorkingDirectory)/cypress/reports/index.html'
+- task: CmdLine@2
+  inputs:
+    script: 'ls'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/cypress/reports/'
