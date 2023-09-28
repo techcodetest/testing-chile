@@ -28,6 +28,7 @@ stages:
         testResultsFiles: '**/output.xml'
         mergeTestResults: true
         testRunTitle: 'publish test results'
+
 - stage: API
   jobs:
   - job: ApiTesting
@@ -44,6 +45,6 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: $(System.DefaultWorkingDirectory)/api-testing/report/junit-report.xml'
+        testResultsFiles: $(System.DefaultWorkingDirectory)/**/junit-report.xml'
         mergeTestResults: true
         testRunTitle: 'publish test results'
