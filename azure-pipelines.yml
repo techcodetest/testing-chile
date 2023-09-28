@@ -27,7 +27,7 @@ steps:
     testRunTitle: 'publish test results'
 - task: UploadPostmanHtmlReport@1
   inputs:
-    cwd: '$(System.DefaultWorkingDirectory)/cypress/reports/'
+    cwd: '$(System.DefaultWorkingDirectory)/cypress/reports'
     tabName: 'Reportes'
 - task: CmdLine@2
   inputs:
