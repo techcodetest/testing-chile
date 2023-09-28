@@ -25,10 +25,10 @@ steps:
     testResultsFiles: '**/output.xml'
     mergeTestResults: true
     testRunTitle: 'publish test results'
-- task: publishhtmlreport@1
+- task: UploadPostmanHtmlReport@1
   inputs:
-    htmlType: 'genericHTML'
-    htmlPath: '$(Build.SourcesDirectory)/cypress/reports/index.html'
+    cwd: '$(System.DefaultWorkingDirectory)/cypress/reports/index.html'
+    tabName: 'Reportes'
 - task: CmdLine@2
   inputs:
     script: 'ls'
