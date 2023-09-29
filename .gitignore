@@ -51,3 +51,4 @@ Thumbs.db
 # Cucumber Report
 ./cypress/reports
 ./cypress/videos
+cypress/reports
